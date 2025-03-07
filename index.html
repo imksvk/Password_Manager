@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Keeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <ul class="options">
+            <h1 id="logo">Passkeeper</h1>
+            <!-- <h1>PassKeeper</h1> -->
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Pricing</li>
+           
+        </ul>
+    </nav>   <!-- nav ending-->
+
+    <div class="container">
+        <h1>PassWord Manager</h1>
+        <p>We are here to Keep you password safe</p>
+        <h2>Your Passwords</h2>
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Passwords</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Singh</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Singh</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Singh</td>
+            </tr>
+
+        </table>
+        
+        <h2>Add New Pasword</h2>
+        <form action="/submit" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+            <br> <br> 
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <br>
+            <input id="submitbtn" type="submit" value="Submit">
+
+        </form>
+
+    </div>
+
+
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
