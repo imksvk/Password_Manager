@@ -1,17 +1,24 @@
+ 
+
 let btn = document.querySelector("#submitbtn");
 let tb = document.querySelector("table");
 
-// const deletepassword = (website)=>{
-//     let data = localStorage.getItem("passwords");
-//     let arr = JSON.parse(data);
-
-
-// }
+const deletepassword = (website)=>{
+    let data = localStorage.getItem("passwords");
+    let arr = JSON.parse(data);
+    arrupdated = arr.filter((e)=>{
+        return e.website !== website;
+    })
+    localStorage.setItem("passwords", JSON.stringify(arrupdated));
+    alert("succesfully deleted");
+    location.reload();
+}
 
 
 const showpasswords = () => {
     let data = localStorage.getItem("passwords");
-    if (data == null) {
+    if (!data || data === "[]" || JSON.parse(data).length === 0)
+        {
         tb.innerHTML = "No Data to show";
     } else {
         tb.innerHTML = `<tr>
@@ -27,12 +34,15 @@ const showpasswords = () => {
                         <td>${element.website}</td>
                         <td>${element.username}</td>
                         <td>${element.password}</td>
-                        <td>${"Delete"}</td>
+                        <td><button class="btn" onclick="deletepassword('${element.website}')" >Delete</button></td>
                     </tr>`
             tb.innerHTML += str;
         }
     }
     // logic
+    website.value = "";
+    username.value = "";
+    password.value = "";
 
 }
 
