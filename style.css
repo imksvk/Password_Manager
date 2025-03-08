@@ -21,9 +21,14 @@ body {
     margin-top: 10px;
 }
 
+#logo:hover{
+    color: #f39c12;
+    cursor: pointer;
+}
+
 .navbar {
     background: linear-gradient(90deg, #3498db, #2c3e50); /* Blue gradient */
-    padding: 20px 30px;
+    padding: 5px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,6 +61,8 @@ body {
     cursor: pointer;
     position: relative;
     font-weight: 500;
+    margin-top: 10px;
+    border-bottom: 5px solid transparent;
     transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
 }
 
@@ -237,4 +244,20 @@ button:hover {
 /* Add Extra Spacing for Layout */
 section {
     margin-bottom: 40px;
+}
+
+.password-cell {
+    display: flex;
+    align-items: center;  /* Aligns password and icon vertically */
+    gap: 8px;  /* Adds space between the password and the icon */
+}
+
+.eyeiconcss{
+    width: 25px;
+    /* padding: 10px 0; */
+    border: 0;
+    outline: 0;
+    font-size: 5px;
+    color: blue;
+    margin-top: 4px;
 }

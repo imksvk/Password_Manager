@@ -15,6 +15,8 @@ const deletepassword = (website)=>{
 }
 
 
+ 
+
 const showpasswords = () => {
     let data = localStorage.getItem("passwords");
     if (!data || data === "[]" || JSON.parse(data).length === 0)
@@ -33,7 +35,12 @@ const showpasswords = () => {
             let str = `<tr>
                         <td>${element.website}</td>
                         <td>${element.username}</td>
-                        <td>${element.password}</td>
+                        <td class="passwordcell">
+                            <p id="maskedpass${i}">***********</p>
+                        
+                        <img onclick="maskpassword(${i})"  class="eyeicon${i}  eyeiconcss" src="eye-close.png">
+                        
+                        </td>
                         <td><button class="btn" onclick="deletepassword('${element.website}')" >Delete</button></td>
                     </tr>`
             tb.innerHTML += str;
@@ -43,7 +50,24 @@ const showpasswords = () => {
     website.value = "";
     username.value = "";
     password.value = "";
+}
 
+
+function maskpassword(i){
+    let data = localStorage.getItem("passwords");
+    let arr = JSON.parse(data);
+    let ele = arr[i];
+
+    let maskedpass = document.querySelector(`#maskedpass${i}`);
+    if(maskedpass.innerText === "***********"){
+        maskedpass.innerText = ele.password;
+        document.querySelector(`.eyeicon${i}`).src = "eye-open.png";
+    }else{
+        maskedpass.innerText = "***********";
+        document.querySelector(`.eyeicon${i}`).src = "eye-close.png";
+        
+    }
+    
 }
 
 showpasswords();
@@ -69,4 +93,10 @@ btn.addEventListener("click", (e) => {
         localStorage.setItem("passwords", JSON.stringify(json));
     }
     showpasswords();
+})
+
+
+
+document.querySelector("#logo").addEventListener("click",()=>{
+    location.reload();
 })
