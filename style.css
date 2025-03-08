@@ -66,7 +66,12 @@ body {
     transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
 }
 
-.navbar li:hover {
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover{
     color: #f39c12; /* Hover color */
     transform: translateY(-4px); /* Slight lift on hover */
     letter-spacing: 1px; /* Letter spacing on hover */
