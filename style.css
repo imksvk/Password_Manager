@@ -265,4 +265,5 @@ section {
     font-size: 5px;
     color: blue;
     margin-top: 4px;
+    cursor: pointer;
 }
